@@ -18,7 +18,7 @@
 
   - name: This is another task
     debug:
-       final task
+       msg: final task
 
   handlers:
   - name: reboot server
