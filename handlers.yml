@@ -3,9 +3,9 @@
   hosts: all
 
   tasks:
-  - name: Install VLC
+  - name: Install WinRAR
     win_chocolatey:
-      name: vlc
+      name: winrar
       state: present
     notify:
     - reboot server
@@ -14,6 +14,7 @@
     debug:
        msg: failing the task as testing required
     failed_when: true
+    ignore_errors: true
 
   - name: This is another task
     debug:
