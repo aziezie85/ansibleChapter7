@@ -9,4 +9,4 @@
       state: present
       include_sub_features: yes
       include_management_tools: yes
-    when: ansible_facts.architecture] == "64-bit"
+    when: ansible_facts.architecture == "64-bit"
