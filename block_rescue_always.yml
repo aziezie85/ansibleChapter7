@@ -1,0 +1,25 @@
+---
+- name: Block testing
+  hosts: all
+  force_handlers: true
+
+  tasks:
+  - block:
+     - name: Install flashplayer
+       win_chocolatey:
+         name: flashplayerpp
+         state: present
+    rescue:
+    - name: Revert back
+      win_chocolatey:
+         name: flashplayerppapi 
+         state: absent
+    always:
+    - name: I am hacker
+      debug:
+         msg: no one can stop me. hahaha    
+  - name: This is another task
+    debug:
+      msg: Hello Haifa
+  
+    
